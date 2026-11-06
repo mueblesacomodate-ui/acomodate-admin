@@ -16,8 +16,11 @@ const firebaseConfig = {
 
 // Evita inicializar múltiples veces en Server Components / HMR
 
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+export const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export const auth = getAuth(app);
+
+
+// Exportar Firestore
